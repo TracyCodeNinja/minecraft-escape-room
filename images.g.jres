@@ -1,0 +1,22 @@
+{
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Steave"
+    },
+    "image2": {
+        "data": "hwQPACAAAAAAAAAAZmbd3d3dAAAAAAAAAAAAAGZm3d3d3QAAAAAAAAAAAABmZt3d3d0AAAAAAADu3t3dZmZmZmaIiIiIiIjM7t3R3WZmZmZmiIiIyIiIzO7d2P9tZmZmZoiIiMiIiMzu3d393WZmZmaIiIiIiIjM7t3d/d1mZmZmiIiIiIiIzO7d2P9tZmZmZoyIiMiIiMzu3dHdZmZmZmbGiIjIiIjM7t7d3WZmZmZmZoiIiIiIzAAAAABmZt3d3d0AAAAAAAAAAAAAZmbd3d3dAAAAAAAAAAAAAGZm3d3d3QAAAAAAAAAAAABmZt3d3d0AAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Steve"
+    },
+    "image3": {
+        "data": "hwQQACAAAAAAAAAAd3fd3d3dAAAAAAAAAAAAAHd33d3d3QAAAAAAAAAAAAB3d93d3d0AAAAAAAAAAAAAd3fd3d3dAAAAAAAARETd3Xd3d3f8d+7u7szMzERE0d13d3d39+fu7u7MzMxERN/d3Xd3d/fn7u7uzMzMRNTd0919d3f35+7u7szMzETd3dPdfXd39+fu7u7MzMxE3d/d1ER0d/fn7u7uzMzMRNTR3UREd3f35+7u7szMzERE3d1EdHd3/Hfu7u7MzMwAAAAAd3fd3d3dAAAAAAAAAAAAAHd33d3d3QAAAAAAAAAAAAB3d93d3d0AAAAAAAAAAAAAd3fd3d3dAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Alex"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
