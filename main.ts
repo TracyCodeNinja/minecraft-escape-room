@@ -1,3 +1,10 @@
+function startMovie () {
+    scene.setBackgroundColor(7)
+    game.splash("Code Ninjas Presents")
+    scene.setBackgroundImage(assets.image`myImage1`)
+    music.play(music.createSong(assets.song`Mice on Venus`), music.PlaybackMode.InBackground)
+    pause(1000)
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
     MyPlayer.vy = -1000
     MyPlayer.vx = 1000
@@ -312,5 +319,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
 })
 let Rock: Sprite = null
 let MyPlayer: Sprite = null
+startMovie()
 MakePlayer()
 SetLevel1()
