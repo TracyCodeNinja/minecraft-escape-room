@@ -1,9 +1,11 @@
 function startMovie () {
+    isMovieOver = false
     scene.setBackgroundColor(7)
     game.splash("Code Ninjas Presents")
     scene.setBackgroundImage(assets.image`myImage1`)
     music.play(music.createSong(assets.song`Mice on Venus`), music.PlaybackMode.InBackground)
     pause(1000)
+    isMovieOver = true
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
     MyPlayer.vy = -1000
@@ -18,9 +20,11 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles0, function (s
     music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.InBackground)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (MyPlayer.isHittingTile(CollisionDirection.Bottom)) {
-        music.play(music.melodyPlayable(music.thump), music.PlaybackMode.InBackground)
-        MyPlayer.vy += -150
+    if (isMovieOver) {
+        if (MyPlayer.isHittingTile(CollisionDirection.Bottom)) {
+            music.play(music.melodyPlayable(music.thump), music.PlaybackMode.InBackground)
+            MyPlayer.vy += -150
+        }
     }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava0, function (sprite, location) {
@@ -155,15 +159,33 @@ function SetLevel1 () {
     tiles.setCurrentTilemap(tilemap`CaveOp`)
     tiles.placeOnTile(MyPlayer, tiles.getTileLocation(3, 13))
 }
+info.onCountdownEnd(function () {
+    game.gameOver(true)
+})
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.chestClosed, function (sprite, location) {
+    music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.UntilDone)
+    music.play(music.createSoundEffect(WaveShape.Noise, 1, 571, 0, 255, 500, SoundExpressionEffect.Warble, InterpolationCurve.Curve), music.PlaybackMode.UntilDone)
+    scene.cameraShake(4, 500)
+    music.play(music.melodyPlayable(music.bigCrash), music.PlaybackMode.UntilDone)
+    make_Warden()
+    info.startCountdown(30)
+    tiles.setTileAt(location, sprites.dungeon.chestOpen)
+})
 function SetLevel3 () {
     sprites.destroyAllSpritesOfKind(SpriteKind.Enemy)
     scene.setBackgroundImage(assets.image`CityBackDrop`)
-    tiles.placeOnTile(MyPlayer, tiles.getTileLocation(0, 13))
-    tiles.setCurrentTilemap(tilemap`level1`)
+    tiles.placeOnTile(MyPlayer, tiles.getTileLocation(2, 0))
+    tiles.setCurrentTilemap(tilemap`ancient city`)
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sprite, location) {
     game.gameOver(false)
 })
+function make_Warden () {
+    Warden = sprites.create(assets.image`realWarden`, SpriteKind.Enemy)
+    tiles.placeOnRandomTile(Warden, sprites.dungeon.collectibleInsignia)
+    Warden.follow(MyPlayer)
+    game.setGameOverEffect(true, effects.starField)
+}
 function MakePlayer () {
     MyPlayer = sprites.create(assets.image`Steve`, SpriteKind.Player)
     if (game.ask("Press A to play as Alex", "Press B to play as Steve")) {
@@ -311,14 +333,13 @@ function SetLevel2 () {
         Rock.setBounceOnWall(true)
     }
 }
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.collectibleInsignia, function (sprite, location) {
-    game.gameOver(true)
-})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.gameOver(false)
 })
 let Rock: Sprite = null
+let Warden: Sprite = null
 let MyPlayer: Sprite = null
+let isMovieOver = false
 startMovie()
 MakePlayer()
 SetLevel1()
