@@ -622,6 +622,95 @@ e f . . . . . . . . . . . . . .
 . . . . . . . e e . . . . . . . 
 . . . . . . . e e . . . . . . . 
 `;
+            case "image17":
+            case "minecart":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. b b b b b b b b b b b b b b . 
+. b c b c b c b c b c b c b b . 
+. b b b b b b b b b b b b b b . 
+. b b c b c b c b c b c b c b . 
+. b b b b b b b b b b b b b b . 
+. b c b c b c b c b c b c b b . 
+. b b b b b b b b b b b b b b . 
+. . f . . . . . . . . . . f . . 
+`;
+            case "image18":
+            case "SteveInMinecart":return img`
+...eeeeeeee....
+...eeeeeeee....
+...edddddde....
+...dddddddd....
+...d18dd81d....
+...dddddddd....
+...ddfddfdd....
+...ddffffdd....
+66666dddd666666
+666666dd6666666
+666666666666666
+666666666666666
+ddd66666666dddd
+ddd66666666dddd
+ddd66666666dddd
+ddd66666666dddd
+ddd66666666dddd
+ddd66666666dddd
+ddd88888c66dddd
+ddd888888c6dddd
+...88888888....
+...88888888....
+...88888888....
+...88888888....
+.bbbbbbbbbbbbbb
+.bcbcbcbcbcbcbb
+.bbbbbbbbbbbbbb
+.bbcbcbcbcbcbcb
+.bbbbbbbbbbbbbb
+.bcbcbcbcbcbcbb
+.bbbbbbbbbbbbbb
+..f..........f.
+`;
+            case "image19":
+            case "AlexInMinecart":return img`
+....44444444....
+....44444444....
+....4444dd44....
+....444dddd4....
+....d1fddf1d....
+....dddddddd....
+....ddd33ddd....
+....dddddddd....
+777777ddd4447777
+777777dddd447777
+7777777dd4447777
+7777777774477777
+dddd77777477dddd
+dddd77777777dddd
+dddd77777777dddd
+dddd77777777dddd
+ddddc777777cdddd
+ddddffffffffdddd
+dddd77777777dddd
+dddd7eeeeee7dddd
+....eeeeeeee....
+....eeeeeeee....
+....eeeeeeee....
+....eeeeeeee....
+.bbbbbbbbbbbbbb.
+.bcbcbcbcbcbcbb.
+.bbbbbbbbbbbbbb.
+.bbcbcbcbcbcbcb.
+.bbbbbbbbbbbbbb.
+.bcbcbcbcbcbcbb.
+.bbbbbbbbbbbbbb.
+..f..........f..
+`;
         }
         return null;
     })

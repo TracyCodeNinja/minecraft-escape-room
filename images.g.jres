@@ -79,6 +79,21 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Deactivated Redstone torch"
     },
+    "image17": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAC7u7sLAAAAAMu7y/sAAAAAu8u7CwAAAADLu8sLAAAAALvLuwsAAAAAy7vLCwAAAAC7y7sLAAAAAMu7ywsAAAAAu8u7CwAAAADLu8sLAAAAALvLuwsAAAAAy7vLCwAAAAC7y7v7AAAAALu7uwsAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "minecart"
+    },
+    "image18": {
+        "data": "hwQPACAAAAAAAAAAZmbd3d3dAAAAAAAAAAAAAGZm3d3d3QAAu7u7CwAAAABmZt3d3d0AAMu7y/vu3t3dZmZmZmaIiIi7y7sL7t3R3WZmZmZmiIiIy7vLC+7d2P9tZmZmZoiIiLvLuwvu3d393WZmZmaIiIjLu8sL7t3d/d1mZmZmiIiIu8u7C+7d2P9tZmZmZoyIiMu7ywvu3dHdZmZmZmbGiIi7y7sL7t7d3WZmZmZmZoiIy7vLCwAAAABmZt3d3d0AALvLuwsAAAAAZmbd3d3dAADLu8sLAAAAAGZm3d3d3QAAu8u7+wAAAABmZt3d3d0AALu7uws=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "SteveInMinecart"
+    },
+    "image19": {
+        "data": "hwQQACAAAAAAAAAAd3fd3d3dAAAAAAAAAAAAAHd33d3d3QAAu7u7CwAAAAB3d93d3d0AAMu7y/sAAAAAd3fd3d3dAAC7y7sLRETd3Xd3d3f8d+7uy7vLC0RE0d13d3d39+fu7rvLuwtERN/d3Xd3d/fn7u7Lu8sLRNTd0919d3f35+7uu8u7C0Td3dPdfXd39+fu7su7ywtE3d/d1ER0d/fn7u67y7sLRNTR3UREd3f35+7uy7vLC0RE3d1EdHd3/Hfu7rvLuwsAAAAAd3fd3d3dAADLu8sLAAAAAHd33d3d3QAAu8u7+wAAAAB3d93d3d0AALu7uwsAAAAAd3fd3d3dAAAAAAAA",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "AlexInMinecart"
+    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",

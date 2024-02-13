@@ -5,6 +5,7 @@ namespace SpriteKind {
     export const Laters = SpriteKind.create()
     export const na = SpriteKind.create()
     export const redstone = SpriteKind.create()
+    export const powerup = SpriteKind.create()
 }
 sprites.onDestroyed(SpriteKind.tnt, function (sprite) {
     scene.cameraShake(50, 200)
@@ -118,10 +119,15 @@ function Place_shovle () {
     tiles.placeOnTile(shovel, tiles.getTileLocation(0, 14))
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile`, function (sprite, location) {
-    MyPlayer.vy = -1000
-    MyPlayer.vx = 1000
-    MyPlayer.startEffect(effects.trail, 500)
-    music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.InBackground)
+    if (CanRemoveMushroom) {
+        tiles.setTileAt(location, assets.tile`myTile0`)
+        music.play(music.melodyPlayable(music.thump), music.PlaybackMode.InBackground)
+    } else {
+        MyPlayer.vy = -1000
+        MyPlayer.vx = 1000
+        MyPlayer.startEffect(effects.trail, 500)
+        music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.InBackground)
+    }
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles0, function (sprite, location) {
     MyPlayer.vy = -1000
@@ -352,6 +358,13 @@ function SetLevel3 () {
     scene.setBackgroundImage(assets.image`CityBackDrop`)
     tiles.placeOnTile(MyPlayer, tiles.getTileLocation(2, 4))
     tiles.setCurrentTilemap(tilemap`ancient city`)
+    if (MyPlayer.image.equals(assets.image`SteveInMinecart`)) {
+        MyPlayer.setImage(assets.image`Steve`)
+    } else {
+        MyPlayer.setImage(assets.image`Alex`)
+    }
+    controller.moveSprite(MyPlayer, 125, 0)
+    CanRemoveMushroom = false
     Place_shovle()
 }
 function PlaceLadder () {
@@ -364,7 +377,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.hazardLava1, function (sp
 function make_Warden () {
     Warden = sprites.create(assets.image`realWarden`, SpriteKind.Enemy)
     tiles.placeOnRandomTile(Warden, sprites.dungeon.collectibleInsignia)
-    Warden.follow(MyPlayer, 100)
+    Warden.follow(MyPlayer, 90)
     effects.starField.startScreenEffect()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.boom, function (sprite, otherSprite) {
@@ -381,6 +394,10 @@ function MakePlayer () {
     scene.cameraFollowSprite(MyPlayer)
     controller.moveSprite(MyPlayer, 125, 0)
     MyPlayer.ay = 250
+}
+function makeMinecart () {
+    Minecart = sprites.create(assets.image`minecart`, SpriteKind.powerup)
+    tiles.placeOnTile(Minecart, tiles.getTileLocation(10, 2))
 }
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairLarge, function (sprite, location) {
     SetLevel3()
@@ -510,7 +527,8 @@ function SetLevel2 () {
         `)
     tiles.setCurrentTilemap(tilemap`TheDesent`)
     tiles.placeOnTile(MyPlayer, tiles.getTileLocation(6, 0))
-    for (let index = 0; index < 1; index++) {
+    makeMinecart()
+    for (let index = 0; index < 3; index++) {
         Rock = sprites.create(assets.image`Rock`, SpriteKind.Enemy)
         Rock.setScale(2, ScaleAnchor.Middle)
         Rock.startEffect(effects.trail)
@@ -520,10 +538,22 @@ function SetLevel2 () {
         Rock.setBounceOnWall(true)
     }
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.powerup, function (sprite, otherSprite) {
+    music.play(music.melodyPlayable(music.powerUp), music.PlaybackMode.InBackground)
+    CanRemoveMushroom = true
+    sprites.destroy(otherSprite)
+    if (MyPlayer.image.equals(assets.image`Steve`)) {
+        MyPlayer.setImage(assets.image`SteveInMinecart`)
+    } else {
+        MyPlayer.setImage(assets.image`AlexInMinecart`)
+    }
+    controller.moveSprite(MyPlayer, 200, 0)
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     game.gameOver(false)
 })
 let Rock: Sprite = null
+let Minecart: Sprite = null
 let Warden: Sprite = null
 let ladder: Sprite = null
 let bridgePos = 0
@@ -534,6 +564,7 @@ let tempNum = 0
 let IsOnLader = false
 let WallNum = 0
 let WallLoop = 0
+let CanRemoveMushroom = false
 let shovel: Sprite = null
 let MyPlayer: Sprite = null
 let treasure: Sprite = null
@@ -543,7 +574,7 @@ let Timer = 0
 let TNT: Sprite = null
 let HasFlintAndSteel = false
 let BOOOM: Sprite = null
-if (game.askForString("What is the passcode?") == "minecraft") {
+if (true) {
     startMovie()
     MakePlayer()
     SetLevel1()
