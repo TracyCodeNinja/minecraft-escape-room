@@ -94,6 +94,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "AlexInMinecart"
     },
+    "image20": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAA//AAAAAAAPD//wAAAAAA////AAAAAADw//8AAAAAAPD/DwAAAAAAAAAAAAAAwQAAAAAAAADBDAAAAAAAABDMAAAAAAAAAMHMAAAAAAAAEBHMAAAAAAAAEAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "FlintAndSteel"
+    },
     "anim1": {
         "namespace": "myAnimations",
         "id": "anim1",
