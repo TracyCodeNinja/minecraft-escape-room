@@ -82,6 +82,12 @@
         "tilemapTile": true,
         "displayName": "LightBlastfloor0"
     },
+    "tile14": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIOLu7u7uAAAg4u7u7u4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "Activated Redstone torch"
+    },
     "level2": {
         "id": "level2",
         "mimeType": "application/mkcd-tilemap",
@@ -90,21 +96,6 @@
             "myTiles.transparency16"
         ],
         "displayName": "level2"
-    },
-    "CaveOp1": {
-        "id": "CaveOp1",
-        "mimeType": "application/mkcd-tilemap",
-        "data": "MTAxMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDAwMDA2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMjAyMDIwMjAxMDYwMDAwMDAwMDAwMDAwMDAwMDAwMjA0MDQwNDA0MDIwMTA2MDAwMDAwMDAwMDAwMDAwMDA0MDQwNDA0MDQwMjAyMDEwMDAwMDAwMDAwMDAwMDAwMDAwNDA0MDQwNDA0MDIwMTAwMDAwMDAwMDAwMDAwMDAwMDA0MDQwNDA0MDQwNDAyMDAwMDAwMDAwMDAwMDAwMDAwMDQwNDA0MDQwNDA0MDIwNTAwMDYwMDAzMDAwNjAzMDAwNDA0MDQwNDA0MDQwMjAxMDEwMTAxMDEwMTAxMDEwMTAyMDIwMjAyMDIwMjAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAyMjAyMDAwMDAwMDAwMDIwMjIyMjAwMDAwMDAwMDAwMjAwMjAwMjAwMDAwMDAwMDAwMDIwMjIwMDAwMDAwMDAwMDAwMDIyMDAwMDAwMDAwMDAwMDAyMDAwMDAwMDAwMDAwMDAwMjAwMDAwMDAwMDAwMDAwMDIwMjIyMjIyMjIyMjIyMjIyMg==",
-        "tileset": [
-            "myTiles.transparency16",
-            "sprites.castle.tileGrass1",
-            "sprites.dungeon.floorLight2",
-            "sprites.castle.rock0",
-            "myTiles.tile3",
-            "sprites.builtin.forestTiles0",
-            "sprites.swamp.swampTile0"
-        ],
-        "displayName": "CaveOp"
     },
     "level3": {
         "id": "level3",
@@ -216,6 +207,22 @@
             "myTiles.tile2"
         ],
         "displayName": "ancient city"
+    },
+    "CaveOp1": {
+        "id": "CaveOp1",
+        "mimeType": "application/mkcd-tilemap",
+        "data": "MTAxMDAwMTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA2MDAwMDA2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDEwMTAxMDEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDYwMjAyMDIwMjAxMDYwMDAwMDAwMDAwMDAwMDAwMDAwMjA0MDQwNDA0MDIwMTA2MDAwMDAwMDAwMDAwMDAwMDA3MDQwNDA0MDQwMjAyMDEwMDAwMDAwMDAwMDAwMDAwMDcwNDA0MDQwNDA0MDIwMTAwMDAwMDAwMDAwMDAwMDAwNzA0MDQwNDA0MDQwNDAyMDAwMDAwMDAwMDAwMDAwMDA3MDQwNDA0MDQwNDA0MDIwNTAwMDYwMDAzMDAwMDAwMDcwNDA0MDQwNDA0MDQwMjAxMDEwMTAxMDEwMTAxMDEwMTAyMDIwMjAyMDIwMjAxMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMjAyMjAyMDAwMDAwMDAwMDIwMjIyMjAwMDAwMDAwMDAwMjAwMjAwMjAwMDAwMDAwMDIwMDIwMjIwMDAwMDAwMDAyMDAwMDIyMDAwMDAwMDAwMjAwMDAyMDAwMDAwMDAwMDIwMDAwMjAwMDAwMDAwMDAyMDAwMDIwMjIyMjIyMjIyMjIyMjIyMg==",
+        "tileset": [
+            "myTiles.transparency16",
+            "sprites.castle.tileGrass1",
+            "sprites.dungeon.floorLight2",
+            "sprites.castle.rock0",
+            "myTiles.tile3",
+            "sprites.builtin.forestTiles0",
+            "sprites.swamp.swampTile0",
+            "sprites.dungeon.floorDark5"
+        ],
+        "displayName": "CaveOp"
     },
     "*": {
         "mimeType": "image/x-mkcd-f4",

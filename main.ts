@@ -4,6 +4,7 @@ namespace SpriteKind {
     export const boom = SpriteKind.create()
     export const Laters = SpriteKind.create()
     export const na = SpriteKind.create()
+    export const redstone = SpriteKind.create()
 }
 sprites.onDestroyed(SpriteKind.tnt, function (sprite) {
     scene.cameraShake(50, 200)
@@ -127,6 +128,23 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles0, function (s
     MyPlayer.vx = 100
     MyPlayer.startEffect(effects.trail, 500)
     music.play(music.melodyPlayable(music.jumpUp), music.PlaybackMode.InBackground)
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.redstone, function (sprite, otherSprite) {
+    music.play(music.melodyPlayable(music.baDing), music.PlaybackMode.InBackground)
+    sprites.destroy(otherSprite)
+    tiles.setTileAt(tiles.getTileLocation(6, 14), assets.tile`Activated Redstone torch`)
+    WallLoop = 5
+    WallNum = 10
+    while (WallLoop > 0) {
+        if (true) {
+            tiles.setWallAt(tiles.getTileLocation(8, WallNum), false)
+            tiles.setTileAt(tiles.getTileLocation(8, WallNum), assets.tile`myTile0`)
+            music.play(music.melodyPlayable(music.knock), music.PlaybackMode.UntilDone)
+            WallNum += 1
+            WallLoop += -1
+            pause(200)
+        }
+    }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (isMovieOver) {
@@ -289,10 +307,9 @@ function SetLevel1 () {
         `)
     tiles.setCurrentTilemap(tilemap`CaveOp`)
     tiles.placeOnTile(MyPlayer, tiles.getTileLocation(3, 13))
+    mySprite = sprites.create(assets.image`Deactivated Redstone torch`, SpriteKind.redstone)
+    tiles.placeOnTile(mySprite, tiles.getTileLocation(6, 14))
 }
-info.onCountdownEnd(function () {
-    game.gameOver(true)
-})
 function TriggerBlast () {
     tiles.setWallAt(tiles.getTileLocation(42, 13), false)
     tiles.setWallAt(tiles.getTileLocation(42, 14), false)
@@ -511,9 +528,12 @@ let Warden: Sprite = null
 let ladder: Sprite = null
 let bridgePos = 0
 let Bridgeloop = 0
+let mySprite: Sprite = null
 let LadderLoop = 0
 let tempNum = 0
 let IsOnLader = false
+let WallNum = 0
+let WallLoop = 0
 let shovel: Sprite = null
 let MyPlayer: Sprite = null
 let treasure: Sprite = null
@@ -523,9 +543,13 @@ let Timer = 0
 let TNT: Sprite = null
 let HasFlintAndSteel = false
 let BOOOM: Sprite = null
-startMovie()
-MakePlayer()
-SetLevel1()
+if (game.askForString("What is the passcode?") == "minecraft") {
+    startMovie()
+    MakePlayer()
+    SetLevel1()
+} else {
+    game.gameOver(false)
+}
 game.onUpdateInterval(500, function () {
     IsOnLader = false
 })
